@@ -3,7 +3,7 @@ package entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
+@Table(name = "client")
 @Entity
 @Data
 public class Client {
