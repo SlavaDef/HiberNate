@@ -1,6 +1,5 @@
 package grud;
 
-import entity.Client;
 import entity.Planet;
 
 import java.util.List;

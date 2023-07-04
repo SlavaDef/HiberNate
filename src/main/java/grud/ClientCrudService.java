@@ -51,8 +51,3 @@ public class ClientCrudService implements ClientDao {
     }
 
 }
-
-// Create – создание;
-// Read – чтение;
-//Update – редактирование;
-// Delete – удаление.
