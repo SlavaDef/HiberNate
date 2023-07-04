@@ -1,0 +1,35 @@
+package storage;
+
+import entity.Planet;
+import lombok.Getter;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateUtil {
+
+    private static final HibernateUtil INSTANCE;
+
+    @Getter
+    private SessionFactory sessionFactory;
+
+    static {
+        INSTANCE = new HibernateUtil();
+    }
+
+    private HibernateUtil() { // приватний конструктор створює обьект і там ми вже конфігуруємо його
+        sessionFactory = new Configuration()
+                .addAnnotatedClass(Class.class)
+                .addAnnotatedClass(Planet.class)
+                .buildSessionFactory();
+    }
+
+    public static HibernateUtil getInstance() {
+        return INSTANCE;
+    }
+
+// само не закриється треба очищати ресурси
+
+    public void close() {
+        sessionFactory.close();
+    }
+}

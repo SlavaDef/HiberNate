@@ -5,18 +5,19 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import storage.ConnectionProvider;
 import storage.HibernateSessionFactoryUtil;
+import storage.HibernateUtil;
 
 
 public class ClientDaoRealization implements ClientDao{
     @Override
     public Client findById(int id) {
-
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Client.class, id);
+return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Client.class,id);
+      //  return HibernateUtil.getInstance().getSessionFactory().openSession().get(Client.class, id);
     }
 
     @Override
     public void save(Client client) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.persist(client);
         tx1.commit();
@@ -25,7 +26,7 @@ public class ClientDaoRealization implements ClientDao{
 
     @Override
     public void update(Client client) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.merge(client);
         tx1.commit();
@@ -34,7 +35,7 @@ public class ClientDaoRealization implements ClientDao{
 
     @Override
     public void delete(Client client) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.remove(client);
         tx1.commit();
