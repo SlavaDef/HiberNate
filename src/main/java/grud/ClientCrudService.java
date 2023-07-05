@@ -15,7 +15,8 @@ public class ClientCrudService implements ClientDao {
     public String findById(long id) {
 
       Client client = session.get(Client.class, id);
-        return client.getName();
+      session.close();
+      return client.getName();
     }
 
     @Override
@@ -38,8 +39,8 @@ public class ClientCrudService implements ClientDao {
 
     @Override
     public void delete(long id) {
-        Transaction tx1 = session.beginTransaction();
         Client client = session.get(Client.class, id);
+        Transaction tx1 = session.beginTransaction();
         session.remove(client);
         tx1.commit();
         session.close();

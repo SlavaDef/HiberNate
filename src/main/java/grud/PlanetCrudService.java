@@ -13,6 +13,7 @@ public class PlanetCrudService implements PlanetDao{
     @Override
     public String findById(String id) {
         Planet planet = session.get(Planet.class, id);
+        session.close();
         return planet.getName();
     }
 
