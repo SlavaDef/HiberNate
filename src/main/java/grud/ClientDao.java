@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ClientDao {
 
-    public Client findById(long id);
+    public String findById(long id);
 
     public void save(Client client);
 

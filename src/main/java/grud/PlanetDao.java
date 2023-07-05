@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PlanetDao {
 
-    public Planet findById(String id);
+    public String findById(String id);
 
     public void save(Planet planet);
 

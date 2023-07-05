@@ -14,14 +14,6 @@ public class ClientCrudServiceTest {
         client = new Client();
         client.setName("Bobbi Fisher");
     }
-    @Test
-    public void testId() {
-        long id = 12L;
-        String expect = client.getName();
-        String name = String.valueOf(service.findById(id));
-        Assertions.assertEquals(expect, name);
-
-    }
 
     @Test
     public void saveClient() {
@@ -29,5 +21,16 @@ public class ClientCrudServiceTest {
         String name = String.valueOf(service.findById(client.getId()));
         Assertions.assertEquals(client.getName(), name);
     }
+
+    @Test
+    public void testFindById() {
+        long id = 12L;
+        String expect = client.getName();
+        String name = String.valueOf(service.findById(id));
+        Assertions.assertEquals(expect, name);
+
+    }
+
+
 
 }

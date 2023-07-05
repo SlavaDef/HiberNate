@@ -12,9 +12,10 @@ public class ClientCrudService implements ClientDao {
     private Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
 
     @Override
-    public Client findById(long id) {
+    public String findById(long id) {
 
-        return session.get(Client.class, id);
+      Client client = session.get(Client.class, id);
+        return client.getName();
     }
 
     @Override

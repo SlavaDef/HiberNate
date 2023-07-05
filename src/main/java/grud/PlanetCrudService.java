@@ -11,8 +11,9 @@ public class PlanetCrudService implements PlanetDao{
     private Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
 
     @Override
-    public Planet findById(String id) {
-        return session.get(Planet.class, id);
+    public String findById(String id) {
+        Planet planet = session.get(Planet.class, id);
+        return planet.getName();
     }
 
     @Override
