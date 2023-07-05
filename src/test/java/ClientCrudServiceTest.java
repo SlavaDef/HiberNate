@@ -6,21 +6,20 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class ClientCrudServiceTest {
 
-    private ClientCrudService service;
+    ClientCrudService service = new ClientCrudService();
     Client client;
 
     @BeforeEach
     public void beforeEach() {
-        service = new ClientCrudService();
         client = new Client();
         client.setName("Bobbi Fisher");
     }
     @Test
     public void testId() {
-        long id = 8L;
+        long id = 12L;
         String expect = client.getName();
         String name = String.valueOf(service.findById(id));
-        Assertions.assertEquals(expect, client);
+        Assertions.assertEquals(expect, name);
 
     }
 
