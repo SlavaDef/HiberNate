@@ -18,16 +18,21 @@ public class ClientCrudServiceTest {
     @Test
     public void saveClient() {
         service.save(client);
-        String name = service.findById(11);//String.valueOf(service.findById(client.getId()));
+        String name = String.valueOf(service.findById(client.getId()));
         Assertions.assertEquals(client.getName(), name);
+        // service.findById(12);
     }
 
     @Test
     public void testFindById() {
-        long id = 11L;
+        long id = 12L;
         String expect = client.getName();
         String name = String.valueOf(service.findById(id));
         Assertions.assertEquals(expect, name);
-
     }
+
+   /* public void testDelateById(){
+        service.delete(client.getId());
+        Assertions.
+    } */
 }

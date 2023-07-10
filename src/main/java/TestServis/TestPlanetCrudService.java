@@ -1,4 +1,4 @@
-package storage;
+package TestServis;
 
 import entity.Planet;
 import grud.PlanetCrudService;

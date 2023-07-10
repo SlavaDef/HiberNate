@@ -1,11 +1,12 @@
-package storage;
+package TestServis;
 
 import entity.Client;
 import grud.ClientCrudService;
+import storage.DatabaseInitService;
 
 import java.util.List;
 
-public class TestClientGridService {
+public class TestClientCrudService {
 
     public void InItBaze(DatabaseInitService databaseInitService) {
         databaseInitService.initDb();
@@ -36,12 +37,12 @@ public class TestClientGridService {
 
 
     public static void main(String[] args) {
-      //  new TestClientGridService().InItBaze(new DatabaseInitService());
-       //   new TestClientGridService().TestFind(new ClientCrudService());
-      // new TestClientGridService().TestSave(new ClientCrudService());
-       // new TestClientGridService().TestUpdate(new ClientCrudService());
-       // new TestClientGridService().TestDelate(new ClientCrudService());
-       new TestClientGridService().TestGetAll(new ClientCrudService());
+      //  new TestClientCrudService().InItBaze(new DatabaseInitService());
+       //   new TestClientCrudService().TestFind(new ClientCrudService());
+      // new TestClientCrudService().TestSave(new ClientCrudService());
+       // new TestClientCrudService().TestUpdate(new ClientCrudService());
+       // new TestClientCrudService().TestDelate(new ClientCrudService());
+       new TestClientCrudService().TestGetAll(new ClientCrudService());
 
     }
 }

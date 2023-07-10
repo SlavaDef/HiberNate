@@ -2,6 +2,7 @@ package storage;
 
 import entity.Client;
 import entity.Planet;
+import entity.Ticket;
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -18,10 +19,11 @@ public class HibernateUtil {
         INSTANCE = new HibernateUtil();
     }
 
-    private HibernateUtil() { // приватний конструктор створює обьект і там ми вже конфігуруємо його
+    private HibernateUtil() {
         sessionFactory = new Configuration()
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(Planet.class)
+                .addAnnotatedClass(Ticket.class)
                 .buildSessionFactory();
     }
 
