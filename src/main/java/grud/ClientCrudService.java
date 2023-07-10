@@ -44,6 +44,7 @@ public class ClientCrudService implements ClientDao {
         session.remove(client);
         tx1.commit();
         session.close();
+
     }
 
     public List<Client> getAll() {

@@ -1,4 +1,4 @@
-2023-07-05 15:14:35 database: flush
+2023-07-10 11:40:50 database: flush
 org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Vyacheslav/PROJECTS/Homew_Hibernate/spaceTravel.mv.db [2.1.214/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Vyacheslav/PROJECTS/Homew_Hibernate/spaceTravel.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -42,10 +42,10 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Vy
 	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:90)
 	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:735)
 	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:773)
-	at storage.HibernateUtil.<init>(HibernateUtil.java:26)
-	at storage.HibernateUtil.<clinit>(HibernateUtil.java:19)
+	at storage.HibernateUtil.<init>(HibernateUtil.java:25)
+	at storage.HibernateUtil.<clinit>(HibernateUtil.java:18)
 	at grud.ClientCrudService.<init>(ClientCrudService.java:12)
-	at storage.TestAll.main(TestAll.java:24)
+	at storage.TestClientGridService.main(TestClientGridService.java:44)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Vyacheslav/PROJECTS/Homew_Hibernate/spaceTravel.mv.db [2.1.214/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Vyacheslav/PROJECTS/Homew_Hibernate/spaceTravel.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
@@ -57,7 +57,3 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Vyaches
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 39 more
-2023-07-05 15:20:38 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT [*]& FROM client"
-Syntax error in SQL statement "SELECT [*]& FROM client"; SQL statement:
-SELECT & FROM client [42000-214]

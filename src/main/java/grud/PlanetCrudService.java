@@ -7,14 +7,15 @@ import storage.HibernateUtil;
 
 import java.util.List;
 
-public class PlanetCrudService implements PlanetDao{
+public class PlanetCrudService implements PlanetDao {
     private Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
 
     @Override
     public String findById(String id) {
         Planet planet = session.get(Planet.class, id);
+        String name = planet.getName();
         session.close();
-        return planet.getName();
+        return name;
     }
 
     @Override

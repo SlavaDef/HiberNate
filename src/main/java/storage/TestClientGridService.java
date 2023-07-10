@@ -5,7 +5,7 @@ import grud.ClientCrudService;
 
 import java.util.List;
 
-public class TestAll {
+public class TestClientGridService {
 
     public void InItBaze(DatabaseInitService databaseInitService) {
         databaseInitService.initDb();
@@ -36,12 +36,12 @@ public class TestAll {
 
 
     public static void main(String[] args) {
-      //  new TestAll().InItBaze(new DatabaseInitService());
-        new TestAll().TestFind(new ClientCrudService());
-        new TestAll().TestSave(new ClientCrudService());
-        new TestAll().TestUpdate(new ClientCrudService());
-       // new TestAll().TestDelate(new ClientCrudService());
-        new TestAll().TestGetAll(new ClientCrudService());
+      //  new TestClientGridService().InItBaze(new DatabaseInitService());
+      //  new TestClientGridService().TestFind(new ClientCrudService());
+      // new TestClientGridService().TestSave(new ClientCrudService());
+       // new TestClientGridService().TestUpdate(new ClientCrudService());
+       // new TestClientGridService().TestDelate(new ClientCrudService());
+       new TestClientGridService().TestGetAll(new ClientCrudService());
 
     }
 }
