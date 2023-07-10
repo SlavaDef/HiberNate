@@ -12,13 +12,13 @@ public class TestClientGridService {
     }
 
     public void TestFind(ClientCrudService clientCrudService) {
-        clientCrudService.findById(5L);
+        String name = clientCrudService.findById(5L);
+        System.out.println(name);
     }
 
     public void TestSave(ClientCrudService clientCrudService) {
         Client client = new Client();
         client.setName("Arni");
-        clientCrudService.save(client);
     }
 
     public void TestUpdate(ClientCrudService clientCrudService){
@@ -37,7 +37,7 @@ public class TestClientGridService {
 
     public static void main(String[] args) {
       //  new TestClientGridService().InItBaze(new DatabaseInitService());
-      //  new TestClientGridService().TestFind(new ClientCrudService());
+       //   new TestClientGridService().TestFind(new ClientCrudService());
       // new TestClientGridService().TestSave(new ClientCrudService());
        // new TestClientGridService().TestUpdate(new ClientCrudService());
        // new TestClientGridService().TestDelate(new ClientCrudService());

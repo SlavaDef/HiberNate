@@ -14,9 +14,9 @@ public class ClientCrudService implements ClientDao {
     @Override
     public String findById(long id) {
 
-      Client client = session.get(Client.class, id);
-      session.close();
-      return client.getName();
+        Client client = session.get(Client.class, id);
+        session.close();
+        return client.getName();
     }
 
     @Override
@@ -54,3 +54,5 @@ public class ClientCrudService implements ClientDao {
     }
 
 }
+
+// (regexp_like(id,'\b[A-Z0-9]+\b'))

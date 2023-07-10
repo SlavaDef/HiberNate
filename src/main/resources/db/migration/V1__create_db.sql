@@ -4,7 +4,7 @@ CREATE TABLE client (
 );
 
 CREATE TABLE planet  (
-     id VARCHAR(100) NOT NULL PRIMARY KEY CHECK(regexp_like(id,'\b[A-Z0-9]+\b')),
+     id VARCHAR(100) NOT NULL PRIMARY KEY,
      name VARCHAR(500) NOT NULL
 );
 
