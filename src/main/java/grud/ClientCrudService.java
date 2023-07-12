@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class ClientCrudService implements ClientDao {
-    private Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
+    private final Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
 
     @Override
     public String findById(long id) {

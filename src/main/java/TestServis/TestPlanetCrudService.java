@@ -37,7 +37,7 @@ public class TestPlanetCrudService {
     public static void main(String[] args) {
         // new TestPlanetCrudService().testSave(new PlanetCrudService());
         // new TestPlanetCrudService().testFindbyId(new PlanetCrudService());
-        // new TestPlanetCrudService().testGetAll(new PlanetCrudService());
+         new TestPlanetCrudService().testGetAll(new PlanetCrudService());
         //  new TestPlanetCrudService().testUpdate(new PlanetCrudService());
         // new TestPlanetCrudService().testDelate(new PlanetCrudService());
 

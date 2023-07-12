@@ -8,7 +8,7 @@ import storage.HibernateUtil;
 import java.util.List;
 
 public class PlanetCrudService implements PlanetDao {
-    private Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
+    private final Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
 
     @Override
     public String findById(String id) {

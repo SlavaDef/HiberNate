@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.Date;
+
 
 @Table(name = "ticket")
 @Entity
@@ -16,7 +18,7 @@ public class Ticket {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", insertable = false, updatable = false)
-    private Data createdAt;
+    private Date createdAt;
 
     @ToString.Exclude
     @ManyToOne
@@ -26,13 +28,13 @@ public class Ticket {
 
     @ToString.Exclude
     @ManyToOne
-    @Column(name = "from_planet_id", nullable = false)
+    @JoinColumn(name = "from_planet_id", nullable = false) // from_planet_
     private Planet fromPlanetId;
 
 
     @ToString.Exclude
     @ManyToOne
-    @Column(name = "to_planet_id", nullable = false)
+    @JoinColumn(name = "to_planet_id", nullable = false) //to_planet_id
     private Planet toPlanetId;
 
 }

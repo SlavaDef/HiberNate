@@ -9,9 +9,9 @@ public interface TicketDao {
 
     public Ticket findTicketById(long id);
 
-    public void saveTicket(Ticket ticket);
+    public boolean saveTicket(Ticket ticket);
 
-    public void updateTicket(String id, String name);
+    public void updateTicket(long id);
 
     public void deleteTicket(long id);
 
