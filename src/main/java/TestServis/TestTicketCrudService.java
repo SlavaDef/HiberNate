@@ -50,10 +50,13 @@ public class TestTicketCrudService {
         ticketCrudService.updateTicket(id);
     }
 
-    public void testRemoveTicket(TicketCrudService ticketCrudService, long id){
-        ticketCrudService.deleteTicket(id);
-    }
+   public boolean testZeroTicket(TicketCrudService ticketCrudService){
+       return ticketCrudService.saveZeroTicket();
+   }
 
+    public boolean testNullTicket(TicketCrudService ticketCrudService){
+        return ticketCrudService.saveNullTicket();
+    }
 
     public static void main(String[] args) {
 
@@ -62,5 +65,7 @@ public class TestTicketCrudService {
         //new TestTicketCrudService().testSaveTicket(new TicketCrudService());
        // new TestTicketCrudService().testUpdateTicket(new TicketCrudService(),13L);
        // new TestTicketCrudService().testRemoveTicket(new TicketCrudService(),15L);
+     // System.out.println(new TestTicketCrudService().testZeroTicket(new TicketCrudService()));
+       // System.out.println(new TestTicketCrudService().testNullTicket(new TicketCrudService()));
     }
 }

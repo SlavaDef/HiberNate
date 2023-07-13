@@ -3,8 +3,6 @@ package entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
-
 
 @Table(name = "planet")
 @Entity
@@ -16,21 +14,4 @@ public class Planet {
 
     @Column(name = "name", length = 500, nullable = false)
     private String name;
-
-   /* @ManyToOne
-    @JoinColumn(name = "id",nullable = false)
-    private Ticket fromTickets;
-    @ManyToOne
-    @JoinColumn(name = "name",nullable = false)
-    private Ticket toTickets; */
-
 }
-
-/*
- @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fromPlanet" )
-    private Ticket fromTickets;
-    @OneToMany( cascade = CascadeType.ALL)
-    @JoinColumn(name = "toPlanet" )
-    private Ticket toTickets;
- */

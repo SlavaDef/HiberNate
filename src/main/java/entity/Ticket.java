@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.util.Date;
-import java.util.List;
 
 
 @Table(name = "ticket")
@@ -27,15 +26,15 @@ public class Ticket {
     private Client client;
 
 
-    @ToString.Exclude
     @ManyToOne
-    @JoinColumn(name = "from_planet_id", nullable = false) // from_planet_
+    @JoinColumn(name = "from_planet_id", nullable = false)
     private Planet fromPlanetId;
 
 
-    @ToString.Exclude
     @ManyToOne
-    @JoinColumn(name = "to_planet_id", nullable = false) //to_planet_id
+    @JoinColumn(name = "to_planet_id", nullable = false)
     private Planet toPlanetId;
 
 }
+
+

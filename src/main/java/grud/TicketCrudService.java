@@ -1,11 +1,9 @@
 package grud;
 
-import entity.Client;
-import entity.Planet;
+
 import entity.Ticket;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import storage.HibernateUtil;
 
 import java.util.List;
@@ -23,16 +21,16 @@ public class TicketCrudService implements TicketDao {
 
     @Override
     public boolean saveTicket(Ticket ticket) {
-       try {
-           Transaction tx1 = session.beginTransaction();
+        try {
+            Transaction tx1 = session.beginTransaction();
 
-        session.persist(ticket);
-        tx1.commit();
-        session.close();
-        return true;
-       } catch (Exception exception)   {
-           return false;
-       }
+            session.persist(ticket);
+            tx1.commit();
+            session.close();
+            return true;
+        } catch (Exception exception) {
+            return false;
+        }
     }
 
     @Override
@@ -63,11 +61,32 @@ public class TicketCrudService implements TicketDao {
         return tickets;
     }
 
-    public static void main(String[] args) {
-        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
-        Query<Ticket> query = session.createQuery("from Ticket where id=5", Ticket.class);
-        Ticket resalt = query.uniqueResult();
-        System.out.println(resalt);
+    public boolean saveZeroTicket() {
+
+        try {
+            Transaction tx1 = session.beginTransaction();
+
+            session.persist(new Ticket());
+            tx1.commit();
+            session.close();
+            return true;
+        } catch (Exception exception) {
+            return false;
+        }
+    }
+
+    public boolean saveNullTicket() {
+
+        try {
+            Transaction tx1 = session.beginTransaction();
+
+            session.persist(null);
+            tx1.commit();
+            session.close();
+            return true;
+        } catch (Exception exception) {
+            return false;
+        }
     }
 
 }
