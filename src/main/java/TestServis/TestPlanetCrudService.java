@@ -9,7 +9,7 @@ public class TestPlanetCrudService {
 
     public void testFindbyId(PlanetCrudService planetCrudService) {
 
-        String name = planetCrudService.findById("EAR1");
+        String name = planetCrudService.findById("EAR");
         System.out.println(name);
     }
 
@@ -26,11 +26,11 @@ public class TestPlanetCrudService {
     }
 
     public void testUpdate(PlanetCrudService planetCrudService) {
-        planetCrudService.update("MAR22", "Uran25");
+        planetCrudService.update("MAR", "MARS2");
     }
 
     public void testDelate(PlanetCrudService planetCrudService) {
-        planetCrudService.delete("MAR22");
+        planetCrudService.delete("MAR");
     }
 
 

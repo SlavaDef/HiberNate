@@ -17,11 +17,20 @@ public class Planet {
     @Column(name = "name", length = 500, nullable = false)
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fromPlanet" )
-    private List<Ticket> fromTickets;
-    @OneToMany( cascade = CascadeType.ALL)
-    @JoinColumn(name = "toPlanet" )
-    private List<Ticket> toTickets;
+   /* @ManyToOne
+    @JoinColumn(name = "id",nullable = false)
+    private Ticket fromTickets;
+    @ManyToOne
+    @JoinColumn(name = "name",nullable = false)
+    private Ticket toTickets; */
 
 }
+
+/*
+ @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fromPlanet" )
+    private Ticket fromTickets;
+    @OneToMany( cascade = CascadeType.ALL)
+    @JoinColumn(name = "toPlanet" )
+    private Ticket toTickets;
+ */

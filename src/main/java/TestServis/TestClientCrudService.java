@@ -37,12 +37,12 @@ public class TestClientCrudService {
 
 
     public static void main(String[] args) {
-      //  new TestClientCrudService().InItBaze(new DatabaseInitService());
+       // new TestClientCrudService().InItBaze(new DatabaseInitService());
        //   new TestClientCrudService().TestFind(new ClientCrudService());
       // new TestClientCrudService().TestSave(new ClientCrudService());
        // new TestClientCrudService().TestUpdate(new ClientCrudService());
        // new TestClientCrudService().TestDelate(new ClientCrudService());
-       new TestClientCrudService().TestGetAll(new ClientCrudService());
+      // new TestClientCrudService().TestGetAll(new ClientCrudService());
 
     }
 }

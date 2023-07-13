@@ -15,22 +15,25 @@ VALUES
 INSERT INTO planet
 (id, name)
 VALUES
-('EAR1','NEPTYN'),
-('VEN6','JPITER'),
-('MAR22','VENERA'),
-('NEP4','MARS'),
-('JPIT4','EARTH');
+('MER','MERCURY'),
+('VEN','VENUS'),
+('EAR','EARTH'),
+('MAR','MARS'),
+('JUP','JUPITER'),
+('SAT','SATURN'),
+('URA','URANUS'),
+('NEP','NEPTUNE');
 
 INSERT INTO ticket
 (client_id,from_planet_id, to_planet_id)
 VALUES
-(1,'EAR1','JPIT4'),
-(2,'VEN6','JPIT4'),
-(3,'EAR1','VEN6'),
-(4,'VEN6','EAR1'),
-(5,'JPIT4','NEP4'),
-(6,'EAR1','MAR22'),
-(7,'EAR1','VEN6'),
-(8,'JPIT4','EAR1'),
-(9,'EAR1','MAR22'),
-(10,'MAR22','EAR1');
+(1,'EAR','NEP'),
+(2,'MER','URA'),
+(3,'NEP','JUP'),
+(4,'SAT','MAR'),
+(5,'URA','SAT'),
+(6,'EAR','MAR'),
+(7,'EAR','VEN'),
+(8,'MAR','VEN'),
+(9,'VEN','EAR'),
+(10,'MER','NEP');

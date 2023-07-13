@@ -42,7 +42,7 @@ public class TestTicketCrudService {
         Planet planet = new Planet();
         Client client = new Client();
         client.setId(8);
-        planet.setName("Novara");
+        planet.setName("MARS");
         ticket.setToPlanetId(planet);
         ticket.setClient(client);
 
