@@ -13,8 +13,8 @@ import java.util.Date;
 
 public class TestTicketCrudService {
 
-    public void testGetAll(TicketCrudService ticletCrudService) {
-        ticletCrudService.getAllTickets();
+    public void testGetAll(TicketCrudService ticketCrudService) {
+       ticketCrudService.getAllTickets();
     }
 
     public Ticket testFindTicketById(TicketCrudService ticketCrudService, long id) {

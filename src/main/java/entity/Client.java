@@ -16,7 +16,7 @@ public class Client {
     @Column(name = "name", length = 200, nullable = false)
     private String name;
 
-      @OneToMany(mappedBy = "client", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "client", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Ticket> tickets;
 /*
 

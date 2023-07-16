@@ -42,7 +42,7 @@ public class TestClientCrudService {
       // new TestClientCrudService().TestSave(new ClientCrudService());
        // new TestClientCrudService().TestUpdate(new ClientCrudService());
        // new TestClientCrudService().TestDelate(new ClientCrudService());
-      // new TestClientCrudService().TestGetAll(new ClientCrudService());
+       new TestClientCrudService().TestGetAll(new ClientCrudService());
 
     }
 }
