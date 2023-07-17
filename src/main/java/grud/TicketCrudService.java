@@ -80,7 +80,10 @@ public class TicketCrudService implements TicketDao {
 
     public boolean saveNoPlanet() {
         Ticket ticket = new Ticket();
-        ticket.setToPlanetId(new Planet());
+        Planet planet = new Planet();
+        planet.setId("Fau");
+        planet.setName("Faust");
+        ticket.setToPlanetId(planet);
         return new TicketCrudService().saveTicket(ticket);
     }
 }
