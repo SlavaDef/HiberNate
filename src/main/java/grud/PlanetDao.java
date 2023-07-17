@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface PlanetDao {
 
-    public String findById(String id);
+    public Planet findById(String id);
 
-    public void save(Planet planet);
+    public Planet save(Planet planet);
 
-    public void update(String id, String name);
+    public Planet update(String id, String name);
 
-    public void delete(String id);
+    public Planet delete(String id);
 
     public List<Planet> getAll();
 }

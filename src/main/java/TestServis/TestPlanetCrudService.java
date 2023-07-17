@@ -7,37 +7,38 @@ import java.util.List;
 
 public class TestPlanetCrudService {
 
-    public void testFindbyId(PlanetCrudService planetCrudService) {
+    public Planet testFindbyId(PlanetCrudService planetCrudService) {
 
-        String name = planetCrudService.findById("EAR");
-        System.out.println(name);
+        return planetCrudService.findById("EAR");
     }
 
-    public void testSave(PlanetCrudService planetCrudService) {
+    public Planet testSave(PlanetCrudService planetCrudService) {
         Planet planet = new Planet();
         planet.setId("Sun32");
         planet.setName("Sunny");
         planetCrudService.save(planet);
+        return planet;
     }
 
-    public void testGetAll(PlanetCrudService planetCrudService) {
-        List<Planet> planets = planetCrudService.getAll();
-        System.out.println(planets);
+    public List<Planet> testGetAll(PlanetCrudService planetCrudService) {
+        return planetCrudService.getAll();
     }
 
-    public void testUpdate(PlanetCrudService planetCrudService) {
-        planetCrudService.update("MAR", "MARS2");
+    public Planet testUpdate(PlanetCrudService planetCrudService) {
+
+        return planetCrudService.update("MAR", "MARS2");
     }
 
-    public void testDelate(PlanetCrudService planetCrudService) {
-        planetCrudService.delete("MAR");
+    public Planet testDelate(PlanetCrudService planetCrudService) {
+
+        return planetCrudService.delete("MAR");
     }
 
 
     public static void main(String[] args) {
         // new TestPlanetCrudService().testSave(new PlanetCrudService());
         // new TestPlanetCrudService().testFindbyId(new PlanetCrudService());
-         new TestPlanetCrudService().testGetAll(new PlanetCrudService());
+        // new TestPlanetCrudService().testGetAll(new PlanetCrudService());
         //  new TestPlanetCrudService().testUpdate(new PlanetCrudService());
         // new TestPlanetCrudService().testDelate(new PlanetCrudService());
 

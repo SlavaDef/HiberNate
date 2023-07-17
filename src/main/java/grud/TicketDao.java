@@ -1,5 +1,6 @@
 package grud;
 
+import entity.Client;
 import entity.Planet;
 import entity.Ticket;
 

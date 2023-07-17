@@ -12,38 +12,38 @@ public class ClientCrudService implements ClientDao {
     private final Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
 
     @Override
-    public String findById(long id) {
-
-        Client client = session.get(Client.class, id);
-        session.close();
-        return client.getName();
+    public Client findById(long id) {
+        return session.get(Client.class, id);
     }
 
     @Override
-    public void save(Client client) {
+    public Client save(Client client) {
         Transaction tx1 = session.beginTransaction();
         session.persist(client);
         tx1.commit();
         session.close();
+        return client;
     }
 
     @Override
-    public void update(long id, String name) {
+    public Client update(long id, String name) {
         Client client = session.get(Client.class, id);
         client.setName(name);
         Transaction tx1 = session.beginTransaction();
         session.merge(client);
         tx1.commit();
         session.close();
+        return client;
     }
 
     @Override
-    public void delete(long id) {
+    public Client delete(long id) {
         Client client = session.get(Client.class, id);
         Transaction tx1 = session.beginTransaction();
         session.remove(client);
         tx1.commit();
         session.close();
+        return client;
 
     }
 
@@ -55,4 +55,3 @@ public class ClientCrudService implements ClientDao {
 
 }
 
-// (regexp_like(id,'\b[A-Z0-9]+\b'))

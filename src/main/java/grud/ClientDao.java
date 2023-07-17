@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface ClientDao {
 
-    public String findById(long id);
+    public Client findById(long id);
 
-    public void save(Client client);
+    public Client save(Client client);
 
-    public void update(long id, String name);
+    public Client update(long id, String name);
 
-    public void delete(long id);
+    public Client delete(long id);
 
     public List<Client> getAll();
 

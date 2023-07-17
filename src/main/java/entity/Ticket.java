@@ -2,7 +2,7 @@ package entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.ToString;
+
 
 import java.util.Date;
 
@@ -20,7 +20,6 @@ public class Ticket {
     @Column(name = "created_at", insertable = false, updatable = false)
     private Date createdAt;
 
-    @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;

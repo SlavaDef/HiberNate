@@ -18,10 +18,5 @@ public class Client {
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Ticket> tickets;
-/*
 
-
-
-    @OneToMany(mappedBy = "client", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    private List<Planet> planets; */
 }

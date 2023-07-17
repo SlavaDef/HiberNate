@@ -1,6 +1,8 @@
 package grud;
 
 
+import entity.Client;
+import entity.Planet;
 import entity.Ticket;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -23,7 +25,6 @@ public class TicketCrudService implements TicketDao {
     public boolean saveTicket(Ticket ticket) {
         try {
             Transaction tx1 = session.beginTransaction();
-
             session.persist(ticket);
             tx1.commit();
             session.close();
@@ -54,39 +55,33 @@ public class TicketCrudService implements TicketDao {
 
     @Override
     public List<Ticket> getAllTickets() {
-
         List<Ticket> tickets = session.createQuery("from Ticket", Ticket.class).list();
         session.close();
-        System.out.println(tickets);
         return tickets;
     }
 
-    public boolean saveZeroTicket() {
-
-        try {
-            Transaction tx1 = session.beginTransaction();
-
-            session.persist(new Ticket());
-            tx1.commit();
-            session.close();
-            return true;
-        } catch (Exception exception) {
-            return false;
-        }
+    public boolean saveNoClient() {
+        Ticket ticket = new Ticket();
+        ticket.setClient(new Client());
+        return new TicketCrudService().saveTicket(ticket);
     }
 
-    public boolean saveNullTicket() {
-
-        try {
-            Transaction tx1 = session.beginTransaction();
-
-            session.persist(null);
-            tx1.commit();
-            session.close();
-            return true;
-        } catch (Exception exception) {
-            return false;
-        }
+    public boolean saveNullClient() {
+        Ticket ticket = new Ticket();
+        ticket.setClient(null);
+        return new TicketCrudService().saveTicket(ticket);
     }
 
+    public boolean saveNullPlanet() {
+        Ticket ticket = new Ticket();
+        ticket.setToPlanetId(null);
+        return new TicketCrudService().saveTicket(ticket);
+    }
+
+    public boolean saveNoPlanet() {
+        Ticket ticket = new Ticket();
+        ticket.setToPlanetId(new Planet());
+        return new TicketCrudService().saveTicket(ticket);
+    }
 }
+

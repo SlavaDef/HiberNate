@@ -11,38 +11,41 @@ public class PlanetCrudService implements PlanetDao {
     private final Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
 
     @Override
-    public String findById(String id) {
+    public Planet findById(String id) {
         Planet planet = session.get(Planet.class, id);
         String name = planet.getName();
         session.close();
-        return name;
+        return planet;
     }
 
     @Override
-    public void save(Planet planet) {
+    public Planet save(Planet planet) {
         Transaction tx1 = session.beginTransaction();
         session.persist(planet);
         tx1.commit();
         session.close();
+        return planet;
     }
 
     @Override
-    public void update(String id, String name) {
+    public Planet update(String id, String name) {
         Planet planet = session.get(Planet.class, id);
         planet.setName(name);
         Transaction tx1 = session.beginTransaction();
         session.merge(planet);
         tx1.commit();
         session.close();
+        return planet;
     }
 
     @Override
-    public void delete(String id) {
+    public Planet delete(String id) {
         Transaction tx1 = session.beginTransaction();
         Planet planet = session.get(Planet.class, id);
         session.remove(planet);
         tx1.commit();
         session.close();
+        return planet;
     }
 
     public List<Planet> getAll() {
