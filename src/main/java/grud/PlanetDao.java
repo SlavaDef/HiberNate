@@ -10,9 +10,9 @@ public interface PlanetDao {
 
     public Planet save(Planet planet);
 
-    public Planet update(String id, String name);
+    public boolean update(Planet planet);
 
-    public Planet delete(String id);
+    public boolean delete(String id);
 
     public List<Planet> getAll();
 }

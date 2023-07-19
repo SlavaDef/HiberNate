@@ -12,10 +12,11 @@ import java.util.List;
 
 public class TicketCrudService implements TicketDao {
 
-    private final Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
+
 
     @Override
     public Ticket findTicketById(long id) {
+        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         Ticket ticket = session.find(Ticket.class, id);
         session.close();
         return ticket;
@@ -23,6 +24,7 @@ public class TicketCrudService implements TicketDao {
 
     @Override
     public boolean saveTicket(Ticket ticket) {
+        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         try {
             Transaction tx1 = session.beginTransaction();
             session.persist(ticket);
@@ -36,6 +38,7 @@ public class TicketCrudService implements TicketDao {
 
     @Override
     public void updateTicket(long id) {
+        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         Ticket ticket = session.get(Ticket.class, id);
         Transaction tx1 = session.beginTransaction();
         session.merge(ticket);
@@ -45,6 +48,7 @@ public class TicketCrudService implements TicketDao {
 
     @Override
     public void deleteTicket(long id) {
+        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         Ticket ticket = session.get(Ticket.class, id);
         session.remove(ticket);
@@ -55,6 +59,7 @@ public class TicketCrudService implements TicketDao {
 
     @Override
     public List<Ticket> getAllTickets() {
+        Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         List<Ticket> tickets = session.createQuery("from Ticket", Ticket.class).list();
         session.close();
         return tickets;

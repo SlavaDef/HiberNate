@@ -1,38 +1,54 @@
 import entity.Client;
 import grud.ClientCrudService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+
 public class ClientCrudServiceTest {
 
-    ClientCrudService service = new ClientCrudService();
-    Client client;
+
+    ClientCrudService service;
 
     @BeforeEach
     public void beforeEach() {
-        client = new Client();
-        client.setName("Bobbi Fisher");
+        service = new ClientCrudService();
     }
 
     @Test
-    public void saveClient() {
-        service.save(client);
-        String name = String.valueOf(service.findById(client.getId()));
-        Assertions.assertEquals(client.getName(), name);
-        // service.findById(12);
+    public void findById() {
+        Client find = service.findById(1L);
+        assertEquals("Mikki Djager", find.getName());
     }
 
     @Test
-    public void testFindById() {
-        long id = 12L;
-        String expect = client.getName();
-        String name = String.valueOf(service.findById(id));
-        Assertions.assertEquals(expect, name);
+    public void delateById() {
+        service.deleteClient(1L);
+        assertEquals(null, service.findById(1L));
     }
 
-   /* public void testDelateById(){
-        service.delete(client.getId());
-        Assertions.
-    } */
+    @Test
+    public void getAllClients() {
+        List<Client> clientList = service.getAllClients();
+        System.out.println("ClientList is " + clientList);
+    }
+
+    @Test
+    public void saveNewClient() {
+        Client client = new Client();
+        client.setName("Tom Jeronimo");
+        service.saveClient(client);
+        Client tom = service.findById(client.getId());
+        assertEquals(client.getName(), tom.getName());
+
+    }
+
+    @Test
+    public void updateClient(){
+        Client client = service.updateClient(2L,"Jerri");
+        Client jerri = service.findById(client.getId());
+        assertEquals(client.getName(), jerri.getName());
+    }
 }

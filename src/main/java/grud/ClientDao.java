@@ -8,13 +8,13 @@ public interface ClientDao {
 
     public Client findById(long id);
 
-    public Client save(Client client);
+    public Client saveClient(Client client);
 
-    public Client update(long id, String name);
+    public Client updateClient(long id, String name);
 
-    public Client delete(long id);
+    public Client deleteClient(long id);
 
-    public List<Client> getAll();
+    public List<Client> getAllClients();
 
 
 }
