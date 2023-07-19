@@ -35,4 +35,11 @@ public class HibernateUtil {
         sessionFactory.close();
     }
 
+
+
+    public static void main(String[] args) {
+
+        new DatabaseInitService().initDb();
+
+    }
 }
