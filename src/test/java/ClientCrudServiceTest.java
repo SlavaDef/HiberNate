@@ -25,8 +25,8 @@ public class ClientCrudServiceTest {
 
     @Test
     public void delateById() {
-        service.deleteClient(1L);
-        assertEquals(null, service.findById(1L));
+        service.deleteClient(5L);
+        assertEquals(null, service.findById(5L));
     }
 
     @Test
