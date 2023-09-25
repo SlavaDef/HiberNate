@@ -14,19 +14,20 @@ public class ClientCrudServiceTest {
 
     @BeforeEach
     public void beforeEach() {
+        new DatabaseInitService().initDb();
         service = new ClientCrudService();
     }
 
     @Test
     public void findById() {
-        Client find = service.findById(1L);
-        assertEquals("Mikki Djager", find.getName());
+        Client find = service.findById(3L);
+        assertEquals("Elon Doe", find.getName());
     }
 
     @Test
     public void delateById() {
-        service.deleteClient(5L);
-        assertEquals(null, service.findById(5L));
+        service.deleteClient(9L);
+        assertEquals(null, service.findById(9L));
     }
 
     @Test
