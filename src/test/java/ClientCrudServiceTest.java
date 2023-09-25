@@ -14,7 +14,6 @@ public class ClientCrudServiceTest {
 
     @BeforeEach
     public void beforeEach() {
-        new DatabaseInitService().initDb();
         service = new ClientCrudService();
     }
 
